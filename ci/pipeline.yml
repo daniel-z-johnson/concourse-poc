@@ -1,0 +1,15 @@
+resources:
+  - name: git-repo-test
+    type: git
+    source:
+      branch: master
+      uri: https://github.com/prime23/concourse-poc.git
+
+jobs:
+  - name: Build
+    public: false
+    plan:
+      - get: git-repo-test
+        trigger: true
+      - task: Build Code
+        file: git-repo-test/ci/task_buildcode.yml
