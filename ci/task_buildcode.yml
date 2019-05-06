@@ -4,6 +4,7 @@ image_resource:
   type: docker-image
   source:
     repository: maven
+    tag: 3.6.1
 inputs:
   - name: git-repo-test
 outputs:
